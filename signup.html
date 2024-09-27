@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="home.css">
+    <style>
+        .div2{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            width:40%;
+            height:300px;
+            border: 2px solid rgb(70, 117, 205);
+            padding: 20px;
+            box-shadow: 0 0 100px rgb(77, 172, 183);
+            margin-left: 29%;
+            margin-bottom:10% ;
+            border-radius: 10px;
+        }
+        label{
+            height:30px;
+            font-size: 30px;
+            color: rgb(65, 24, 162);
+            text-align: end;
+        }
+        input{
+            height:35px;
+            font-size:25px;
+            color: rgb(214, 90, 233);
+        }
+        #sub{
+            width:200px;
+            height:40px;
+            font-size: 20px;
+            color: rgb(65, 24, 162);
+            background-color: rgb(131, 183, 228);
+            margin:5% 75%;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1">
+        <h5 id="name">SignUp Page</h5>
+        <div id="buttons">
+            <button class="but"><a href="home.html">Home</a></button>
+            <button class="but"><a href="Login.html">Login</a></button>
+            <button class="but"><a href="signup.html">SignUp</a></button>
+        </div>
+    </div>
+    <div class="div2">
+        <label for="name1">Username:</label>
+        <input type="text" id="name1">
+        <label for="age">Age:</label>
+        <input type="number" id="age">
+        <label for="email">Email:</label>
+        <input type="email" id="email">
+        <label for="num">Phone:</label>
+        <input type="number" id="num">
+        <label for="pass">Password:</label>
+        <input type="password" id="pass">
+        <button type="submit" id="sub">Submit</button>
+    </div>
+
+</body>
+</html>
+<script>
+    sub=document.getElementById("sub");
+    sub.addEventListener("click",push);
+    arr=[];
+    function push(){
+        if(name1.value && pass.value){
+            arr.push({username:name1.value,password:pass.value});
+            console.log(arr);
+            console.log("Signup successful!!");
+        }
+        else{
+            alert("Enter username and password");
+        }
+    }
+</script>

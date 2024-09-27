@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Page</title>
+    <link rel="stylesheet" href="home.css">
+    <style>
+        #input1{
+            margin-top:2.5%;
+            display:flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap:2.5%;
+            height:50px;
+        }
+        #inp1,#inp2{
+            height:100%;
+            width:35%;
+            background-color: rgb(208, 181, 234);
+        }
+        #sub{
+            width:10%;
+            background-color: rgb(208, 181, 234);
+        }
+        .blog{
+            height:200px;
+            margin:2.5%;
+        }
+        .content{
+            border:2px solid rgb(132, 62, 207);
+            display:flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            height:100%;
+            padding: 15px;
+            margin-bottom: 10px;
+        }
+        #para1{
+            border:2px solid rgb(32, 116, 184);
+            width:73%;
+            height:97%;
+            margin-top:0;
+            font-size: 20px;
+        }
+        #img1{
+            border:2px solid rgb(93, 207, 207);
+            width:25%;
+            height:97%
+        }
+        @media(max-width:320px){
+            #buttons{
+                height: 30px;
+                width:50px;
+            }
+            .but{
+                width:60px;
+            }
+        }
+    </style>
+</head>
+<body>
+</body>
+</html>
+<script>
+    let div1=document.createElement("div");
+    div1.setAttribute("class","div1");
+    let name=document.createElement("text");
+    name.innerText="Blog Page";
+    name.setAttribute("id","name");
+
+    let buttons=document.createElement("div");
+    buttons.setAttribute("id","buttons");
+    let home=document.createElement("button");
+    let link1=document.createElement("a");
+    link1.innerText="Home";
+    link1.setAttribute("href","home.html");
+    home.append(link1);
+    home.setAttribute("class","but");
+
+    let login=document.createElement("button");
+    let link2=document.createElement("a");
+    link2.setAttribute("href","Login.html");
+    link2.innerText="Login";
+    login.append(link2);
+    login.setAttribute("class","but");
+
+
+    let signup=document.createElement("button");
+    let link3=document.createElement("a");
+    link3.setAttribute("href","signup.html");
+    link3.innerText="Signup";
+    signup.append(link3);
+    signup.setAttribute("class","but");
+    buttons.append(home,login,signup);
+    div1.append(name,buttons);
+    let body=document.querySelector("body");
+
+    body.append(div1);
+
+
+    let input1=document.createElement("div");
+    let inptext=document.createElement("input");
+    let inpimg=document.createElement("input");
+    let sub=document.createElement("button");
+    input1.setAttribute("id","input1");
+    sub.setAttribute("id","sub");
+    inptext.setAttribute("id","inp1");
+    inptext.setAttribute("placeholder","Enter the text here");
+    inpimg.setAttribute("id","inp2");
+    inpimg.setAttribute("placeholder","Enter the image url");
+    sub.innerText="Submit";
+    input1.append(inptext,inpimg,sub);
+
+    body.append(div1,input1);
+    let blog=document.createElement("div");
+    blog.setAttribute("class","blog");
+    body.append(blog);
+    sub.addEventListener("click",display);
+
+    let arr=[];
+    function display(){
+        let content=document.createElement("div");
+        content.setAttribute("class","content");
+        let para1=document.createElement("p");
+        para1.innerText=document.getElementById("inp1").value;
+        para1.setAttribute("id","para1");
+        let img1=document.createElement("img");
+        img1.src=document.getElementById("inp2").value;
+        img1.setAttribute("id","img1");
+
+        arr.push({data:para1,image:img1.src});
+        for(i=0;i<arr.length;i++){
+            if(i%2==0){
+                content.append(para1,img1);
+            }
+            else{
+                content.append(img1,para1);
+            }
+            blog.append(content);
+        }
+        inptext.value="";
+        inpimg.value="";
+        inptext.setAttribute("placeholder","Enter the text here");
+        inpimg.setAttribute("placeholder","Enter the image url");
+    }
+</script>

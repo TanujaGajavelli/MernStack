@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="home.css">
+    <style>
+        .div2{
+            display: grid;
+            grid-template-columns: repeat(2,45%);
+            width:40%;
+            height:300px;
+            border: 2px solid rgb(70, 117, 205);
+            padding: 10px;
+            box-shadow: 0 0 100px rgb(77, 172, 183);
+            margin-left: 29%;
+            margin-bottom:7% ;
+            border-radius: 10px;
+            padding-top: 100px;
+            padding-right: 30px;
+        }
+        label{
+            height:30px;
+            font-size: 30px;
+            color: rgb(88, 50, 176);
+            text-align: end;
+        }
+        input{
+            height:35px;
+            font-size:25px;
+            color: rgb(214, 90, 233);
+        }
+        #sub{
+            height:40px;
+            font-size: 25px;
+            margin:20% 90%;
+            width:200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1">
+        <h5 id="name">Login Page</h5>
+        <div id="buttons">
+            <button class="but"><a href="home.html">Home</a></button>
+            <button class="but"><a href="Login.html">Login</a></button>
+            <button class="but"><a href="signup.html">SignUp</a></button>
+        </div>
+    </div>
+    <div class="div2">
+        <label for="name1">Username:</label>
+        <input type="text" id="name1" required>
+        <label for="pass">Password:</label>
+        <input type="password" id="pass" required>
+        <button type="submit" id="sub">Submit</button> 
+        </div>
+</body>
+</html>
+<script>
+    sub=document.getElementById("sub");
+    sub.addEventListener("click",display);
+    function display(){
+        if(name1.value && pass.value){
+            let name1=document.getElementById("name1");
+            let pass=document.getElementById("pass");
+            console.log("Logged in! username:"+name1.value+" password:"+pass.value);
+        }
+    }
+</script>
